@@ -9,7 +9,8 @@
     <version>1.0.0-ALPHA</version>
 
     <name>RockPaperScissors</name>
-    <description>A severely overbuilt plugin that runs the classic rock, paper, scissors game against a bot</description>
+    <description>A severely overbuilt plugin that runs the classic rock, paper, scissors game against a bot
+    </description>
 
     <packaging>jar</packaging>
     <properties>

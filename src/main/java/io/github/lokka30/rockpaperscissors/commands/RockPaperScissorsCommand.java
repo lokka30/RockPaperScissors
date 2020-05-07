@@ -15,17 +15,20 @@ import java.util.concurrent.ThreadLocalRandom;
 public class RockPaperScissorsCommand implements CommandExecutor {
 
     private RockPaperScissors instance;
-    public RockPaperScissorsCommand(RockPaperScissors instance) { this.instance = instance; }
+
+    public RockPaperScissorsCommand(RockPaperScissors instance) {
+        this.instance = instance;
+    }
 
     @Override
     public boolean onCommand(@NotNull final CommandSender sender, @NotNull final Command cmd, @NotNull final String label, @NotNull final String[] args) {
-        if(sender instanceof Player) {
+        if (sender instanceof Player) {
             final Player player = (Player) sender;
-            if(player.hasPermission("rockpaperscissors.use")) {
-                if(args.length == 0) {
+            if (player.hasPermission("rockpaperscissors.use")) {
+                if (args.length == 0) {
                     startRPS(player, RPSAction.RANDOM);
-                } else if(args.length == 1) {
-                    switch(args[0].toLowerCase()) {
+                } else if (args.length == 1) {
+                    switch (args[0].toLowerCase()) {
                         case "rock":
                             startRPS(player, RPSAction.ROCK);
                             break;
@@ -43,13 +46,13 @@ public class RockPaperScissorsCommand implements CommandExecutor {
                             instance.fileCache.SETTINGS_SOUND_CMD_SUCCESS.playToPlayer(player);
                             break;
                         case "info":
-                            for(String msg : instance.fileCache.MESSAGES_INFO) {
+                            for (String msg : instance.fileCache.MESSAGES_INFO) {
                                 player.sendMessage(instance.utils.prefix(msg));
                             }
                             instance.fileCache.SETTINGS_SOUND_CMD_SUCCESS.playToPlayer(player);
                             break;
                         case "reload":
-                            if(player.hasPermission("rockpaperscissors.reload")) {
+                            if (player.hasPermission("rockpaperscissors.reload")) {
                                 player.sendMessage(instance.utils.prefix(instance.fileCache.MESSAGES_RELOAD_STARTED));
                                 instance.fileCache.cache();
                                 player.sendMessage(instance.utils.prefix(instance.fileCache.MESSAGES_RELOAD_COMPLETE));
@@ -80,7 +83,7 @@ public class RockPaperScissorsCommand implements CommandExecutor {
 
     private RPSAction generateRandomRPSAction() {
         final int index = ThreadLocalRandom.current().nextInt(1, 3);
-        switch(index) {
+        switch (index) {
             case 1:
                 return RPSAction.ROCK;
             case 2:
@@ -93,11 +96,11 @@ public class RockPaperScissorsCommand implements CommandExecutor {
     }
 
     private void startRPS(Player player, RPSAction playerAction) {
-        if(playerAction == RPSAction.RANDOM) {
+        if (playerAction == RPSAction.RANDOM) {
             playerAction = generateRandomRPSAction();
         }
 
-        switch(playerAction) {
+        switch (playerAction) {
             case ROCK:
                 instance.fileCache.SETTINGS_TITLE_START_ROCK.send(player);
                 break;
@@ -118,10 +121,10 @@ public class RockPaperScissorsCommand implements CommandExecutor {
             public void run() {
                 RPSAction botAction = generateRandomRPSAction();
 
-                switch(finalPlayerAction) {
+                switch (finalPlayerAction) {
                     case ROCK:
 
-                        switch(botAction) {
+                        switch (botAction) {
                             case ROCK:
                                 rpsFinished(player, RPSOutcome.DRAW);
                                 break;
@@ -138,7 +141,7 @@ public class RockPaperScissorsCommand implements CommandExecutor {
                         break;
                     case PAPER:
 
-                        switch(botAction) {
+                        switch (botAction) {
                             case ROCK:
                                 rpsFinished(player, RPSOutcome.WIN);
                                 break;
@@ -155,7 +158,7 @@ public class RockPaperScissorsCommand implements CommandExecutor {
                         break;
                     case SCISSORS:
 
-                        switch(botAction) {
+                        switch (botAction) {
                             case ROCK:
                                 rpsFinished(player, RPSOutcome.LOSS);
                                 break;
@@ -181,7 +184,7 @@ public class RockPaperScissorsCommand implements CommandExecutor {
     private void rpsFinished(Player player, RPSOutcome outcome) {
         instance.fileCache.modifyPoints(player, outcome);
 
-        switch(outcome) {
+        switch (outcome) {
             case WIN:
                 instance.fileCache.SETTINGS_TITLE_END_WIN.send(player);
                 break;

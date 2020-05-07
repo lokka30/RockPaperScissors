@@ -47,7 +47,7 @@ public class RockPaperScissors extends JavaPlugin {
 
         //Check server version.
         final String currentServerVersion = getServer().getClass().getPackage().getName().split("\\.")[3];
-        if(utils.getSupportedServerVersions().contains(currentServerVersion)) {
+        if (utils.getSupportedServerVersions().contains(currentServerVersion)) {
             utils.log(LogLevel.INFO, "Detected server version as '&b" + currentServerVersion + "&7' (supported).");
         } else {
             utils.log(LogLevel.INFO, "Detected server version as '&b" + currentServerVersion + "&7'. Your current version of the RockPaperScissors does not support your server's version, you will not receive support for any issues you encounter.");
@@ -122,7 +122,7 @@ public class RockPaperScissors extends JavaPlugin {
     //TODO metrics url is https://bstats.org/plugin/bukkit/RockPaperScissors/7437
 
     private void checkForUpdates() {
-        if(fileCache.SETTINGS_CHECK_FOR_UPDATES) {
+        if (fileCache.SETTINGS_CHECK_FOR_UPDATES) {
             utils.log(LogLevel.INFO, "&8(&3Update Checker&8) &7Checking for updates...");
             new UpdateChecker(this, 12345).getVersion(version -> {
                 final String currentVersion = getDescription().getVersion();

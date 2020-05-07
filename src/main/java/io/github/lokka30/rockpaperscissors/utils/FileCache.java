@@ -12,9 +12,6 @@ import java.util.List;
 
 public class FileCache {
 
-    private RockPaperScissors instance;
-    public FileCache(RockPaperScissors instance) { this.instance = instance; }
-
     public Boolean SETTINGS_CHECK_FOR_UPDATES;
     public String MESSAGES_PREFIX;
     public List<String> MESSAGES_INFO;
@@ -36,8 +33,12 @@ public class FileCache {
     public CachedTitle SETTINGS_TITLE_END_LOSS;
     public int SETTINGS_OUTCOME_DELAY;
     public String MESSAGES_POINTS;
-
     public HashMap<Player, Integer> pointsMap;
+    private RockPaperScissors instance;
+
+    public FileCache(RockPaperScissors instance) {
+        this.instance = instance;
+    }
 
     public void cache() {
         instance.utils.log(LogLevel.INFO, "Caching file values...");
@@ -64,7 +65,7 @@ public class FileCache {
         SETTINGS_OUTCOME_DELAY = instance.settings.get("outcome-delay", 1);
         MESSAGES_POINTS = instance.messages.get("points", "your score is %points% points");
 
-        if(pointsMap == null) {
+        if (pointsMap == null) {
             pointsMap = new HashMap<>();
         } else {
             pointsMap.clear();
@@ -94,7 +95,7 @@ public class FileCache {
     public int getPoints(Player player) {
         final String uuidStr = player.getUniqueId().toString();
 
-        if(!pointsMap.containsKey(player)) {
+        if (!pointsMap.containsKey(player)) {
             pointsMap.put(player, instance.data.getOrSetDefault("players." + uuidStr + ".points", 0));
         }
 
@@ -105,7 +106,7 @@ public class FileCache {
         final String uuidStr = player.getUniqueId().toString();
 
 
-        switch(outcome) {
+        switch (outcome) {
             case WIN:
                 pointsMap.put(player, getPoints(player) + 1);
                 break;
