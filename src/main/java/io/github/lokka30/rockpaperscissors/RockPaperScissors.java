@@ -61,22 +61,22 @@ public class RockPaperScissors extends JavaPlugin {
 
         //Load files.
         settings = LightningBuilder
-                .fromFile(new File(getDataFolder() + "settings"))
+                .fromFile(new File(getDataFolder() + File.separator + "settings"))
                 .addInputStreamFromResource("settings.yml")
                 .createYaml();
         messages = LightningBuilder
-                .fromFile(new File(getDataFolder() + "messages"))
+                .fromFile(new File(getDataFolder() + File.separator + "messages"))
                 .addInputStreamFromResource("messages.yml")
                 .createYaml();
         data = LightningBuilder
-                .fromFile(new File(getDataFolder() + "data"))
+                .fromFile(new File(getDataFolder() + File.separator + "data"))
                 .addInputStreamFromResource("data.json")
                 .createJson();
 
         //Check if they exist
-        final File settingsFile = new File(getDataFolder() + "settings.yml");
-        final File messagesFile = new File(getDataFolder() + "messages.yml");
-        final File dataFile = new File(getDataFolder() + "data.json");
+        final File settingsFile = new File(getDataFolder() + File.separator + "settings.yml");
+        final File messagesFile = new File(getDataFolder() + File.separator + "messages.yml");
+        final File dataFile = new File(getDataFolder() + File.separator + "data.json");
 
         if (!(settingsFile.exists() && !settingsFile.isDirectory())) {
             utils.log(LogLevel.INFO, "File '&bsettings.yml&7' doesn't exist. Creating it now.");
