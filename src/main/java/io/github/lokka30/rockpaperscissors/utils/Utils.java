@@ -1,6 +1,7 @@
 package io.github.lokka30.rockpaperscissors.utils;
 
 import io.github.lokka30.rockpaperscissors.RockPaperScissors;
+import io.github.lokka30.rockpaperscissors.enums.LogLevel;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandExecutor;

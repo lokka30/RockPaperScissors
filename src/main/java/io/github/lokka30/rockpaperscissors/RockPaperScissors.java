@@ -3,8 +3,8 @@ package io.github.lokka30.rockpaperscissors;
 import de.leonhard.storage.LightningBuilder;
 import de.leonhard.storage.internal.FlatFile;
 import io.github.lokka30.rockpaperscissors.commands.RockPaperScissorsCommand;
+import io.github.lokka30.rockpaperscissors.enums.LogLevel;
 import io.github.lokka30.rockpaperscissors.utils.FileCache;
-import io.github.lokka30.rockpaperscissors.utils.LogLevel;
 import io.github.lokka30.rockpaperscissors.utils.UpdateChecker;
 import io.github.lokka30.rockpaperscissors.utils.Utils;
 import org.bstats.bukkit.Metrics;
@@ -149,7 +149,8 @@ public class RockPaperScissors extends JavaPlugin {
         utils.log(LogLevel.INFO, "&8+---+ &f(Disable Started) &8+---+");
         final long startTime = System.currentTimeMillis();
 
-        //If code needs to be added, put it here.
+        utils.log(LogLevel.INFO, "&8(&31&8/&31&8) &7Clearing pointsMap..");
+        fileCache.pointsMap.clear();
 
         final long totalTime = System.currentTimeMillis() - startTime;
         utils.log(LogLevel.INFO, "&8+---+ &f(Disable Complete, took &b" + totalTime + "ms&f) &8+---+");

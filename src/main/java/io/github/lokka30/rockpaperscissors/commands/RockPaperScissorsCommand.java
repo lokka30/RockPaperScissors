@@ -1,8 +1,8 @@
 package io.github.lokka30.rockpaperscissors.commands;
 
 import io.github.lokka30.rockpaperscissors.RockPaperScissors;
-import io.github.lokka30.rockpaperscissors.utils.RPSAction;
-import io.github.lokka30.rockpaperscissors.utils.RPSOutcome;
+import io.github.lokka30.rockpaperscissors.enums.RPSAction;
+import io.github.lokka30.rockpaperscissors.enums.RPSOutcome;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -101,13 +101,13 @@ public class RockPaperScissorsCommand implements CommandExecutor {
 
         switch (playerAction) {
             case ROCK:
-                instance.fileCache.SETTINGS_TITLE_START_ROCK.send(player);
+                instance.fileCache.SETTINGS_TITLE_START_ROCK.sendToPlayer(player);
                 break;
             case PAPER:
-                instance.fileCache.SETTINGS_TITLE_START_PAPER.send(player);
+                instance.fileCache.SETTINGS_TITLE_START_PAPER.sendToPlayer(player);
                 break;
             case SCISSORS:
-                instance.fileCache.SETTINGS_TITLE_START_SCISSORS.send(player);
+                instance.fileCache.SETTINGS_TITLE_START_SCISSORS.sendToPlayer(player);
                 break;
             default:
                 throw new IllegalStateException("Undefined RPSAction: " + playerAction.toString());
@@ -185,15 +185,15 @@ public class RockPaperScissorsCommand implements CommandExecutor {
 
         switch (outcome) {
             case WIN:
-                instance.fileCache.SETTINGS_TITLE_END_WIN.send(player);
+                instance.fileCache.SETTINGS_TITLE_END_WIN.sendToPlayer(player);
                 instance.fileCache.SETTINGS_SOUND_GAME_WIN.playToPlayer(player);
                 break;
             case DRAW:
-                instance.fileCache.SETTINGS_TITLE_END_DRAW.send(player);
+                instance.fileCache.SETTINGS_TITLE_END_DRAW.sendToPlayer(player);
                 instance.fileCache.SETTINGS_SOUND_GAME_DRAW.playToPlayer(player);
                 break;
             case LOSS:
-                instance.fileCache.SETTINGS_TITLE_END_LOSS.send(player);
+                instance.fileCache.SETTINGS_TITLE_END_LOSS.sendToPlayer(player);
                 instance.fileCache.SETTINGS_SOUND_GAME_LOSS.playToPlayer(player);
                 break;
             default:

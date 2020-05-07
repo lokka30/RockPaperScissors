@@ -18,7 +18,7 @@ public class CachedTitle {
         this.fadeOut = fadeOut;
     }
 
-    public void send(Player player) {
+    public void sendToPlayer(Player player) {
         player.sendTitle(mainTitle, subTitle, fadeIn, stay, fadeOut);
     }
 }

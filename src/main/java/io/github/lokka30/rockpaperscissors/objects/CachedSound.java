@@ -15,18 +15,6 @@ public class CachedSound {
         this.pitch = pitch;
     }
 
-    public Sound getSound() {
-        return sound;
-    }
-
-    public float getVolume() {
-        return volume;
-    }
-
-    public float getPitch() {
-        return pitch;
-    }
-
     public void playToPlayer(Player player) {
         player.playSound(player.getLocation(), sound, volume, pitch);
     }

@@ -1,6 +1,8 @@
 package io.github.lokka30.rockpaperscissors.utils;
 
 import io.github.lokka30.rockpaperscissors.RockPaperScissors;
+import io.github.lokka30.rockpaperscissors.enums.LogLevel;
+import io.github.lokka30.rockpaperscissors.enums.RPSOutcome;
 import io.github.lokka30.rockpaperscissors.objects.CachedSound;
 import io.github.lokka30.rockpaperscissors.objects.CachedTitle;
 import org.bukkit.Sound;
