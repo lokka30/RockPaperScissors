@@ -26,7 +26,10 @@ public class RockPaperScissorsCommand implements CommandExecutor {
             final Player player = (Player) sender;
             if (player.hasPermission("rockpaperscissors.use")) {
                 if (args.length == 0) {
-                    startRPS(player, RPSAction.RANDOM);
+                    for (String msg : instance.fileCache.MESSAGES_INFO) {
+                        player.sendMessage(instance.utils.prefix(msg));
+                    }
+                    instance.fileCache.SETTINGS_SOUND_CMD_SUCCESS.playToPlayer(player);
                 } else if (args.length == 1) {
                     switch (args[0].toLowerCase()) {
                         case "rock":
@@ -43,12 +46,6 @@ public class RockPaperScissorsCommand implements CommandExecutor {
                             break;
                         case "points":
                             player.sendMessage(instance.utils.prefix(instance.fileCache.MESSAGES_POINTS.replaceAll("%points%", Integer.toString(instance.fileCache.getPoints(player)))));
-                            instance.fileCache.SETTINGS_SOUND_CMD_SUCCESS.playToPlayer(player);
-                            break;
-                        case "info":
-                            for (String msg : instance.fileCache.MESSAGES_INFO) {
-                                player.sendMessage(instance.utils.prefix(msg));
-                            }
                             instance.fileCache.SETTINGS_SOUND_CMD_SUCCESS.playToPlayer(player);
                             break;
                         case "reload":
@@ -96,6 +93,8 @@ public class RockPaperScissorsCommand implements CommandExecutor {
     }
 
     private void startRPS(Player player, RPSAction playerAction) {
+        instance.fileCache.SETTINGS_SOUND_GAME_START.playToPlayer(player);
+
         if (playerAction == RPSAction.RANDOM) {
             playerAction = generateRandomRPSAction();
         }
@@ -161,15 +160,12 @@ public class RockPaperScissorsCommand implements CommandExecutor {
                         switch (botAction) {
                             case ROCK:
                                 rpsFinished(player, RPSOutcome.LOSS);
-                                instance.fileCache.SETTINGS_SOUND_GAME_START.playToPlayer(player);
                                 break;
                             case PAPER:
                                 rpsFinished(player, RPSOutcome.WIN);
-                                instance.fileCache.SETTINGS_SOUND_GAME_START.playToPlayer(player);
                                 break;
                             case SCISSORS:
                                 rpsFinished(player, RPSOutcome.DRAW);
-                                instance.fileCache.SETTINGS_SOUND_GAME_START.playToPlayer(player);
                                 break;
                             default:
                                 return;

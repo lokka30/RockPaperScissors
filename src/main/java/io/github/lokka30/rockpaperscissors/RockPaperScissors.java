@@ -43,11 +43,19 @@ public class RockPaperScissors extends JavaPlugin {
     }
 
     private void checkCompatibility() {
-        utils.log(LogLevel.INFO, "&8(&31&8/&b4&8) &7Checking compatibility with your server...");
+        utils.log(LogLevel.INFO, "&8(&31&8/&34&8) &7Checking compatibility with your server...");
 
         //Check server version.
-        final String currentServerVersion = getServer().getClass().getPackage().getName().split("\\.")[3];
-        if (utils.getSupportedServerVersions().contains(currentServerVersion)) {
+        final String currentServerVersion = getServer().getVersion();
+        boolean isSupported = false;
+        for (String supportedVersion : utils.getSupportedServerVersions()) {
+            if (supportedVersion.equals(currentServerVersion)) {
+                isSupported = true;
+                break;
+            }
+        }
+
+        if (isSupported) {
             utils.log(LogLevel.INFO, "Detected server version as '&b" + currentServerVersion + "&7' (supported).");
         } else {
             utils.log(LogLevel.INFO, "Detected server version as '&b" + currentServerVersion + "&7'. Your current version of the RockPaperScissors does not support your server's version, you will not receive support for any issues you encounter.");

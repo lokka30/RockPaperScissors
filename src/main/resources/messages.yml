@@ -14,11 +14,13 @@ no-permission: '%prefix% You don''t have access to that.'
 info:
   - '%prefix% Running &bVersion %version%&7 by &blokka30&7.'
   - '%prefix% Available commands:'
-  - '&8 &m->&b /rps &8- &7Play RPS with a random action'
-  - '&8 &m->&b /rps [rock/paper/scissors] &8- &7Play RPS with specified action'
+  - '&8 &m->&b /rps &8- &7View plugin information'
+  - '&8 &m->&b /rps [rock/paper/scissors/random] &8- &7Play RPS with specified action'
   - '&8 &m->&b /rps points &8- &7Shows your RPS score'
-  - '&8 &m->&b /rps info &8- &7Show plugin info and commands list'
   - '&8 &m->&b /rps reload &8- &7Reload the file cache'
+
+# This message is sent when a user incorrectly uses the /rps command.
+usage: '%prefix% Usage: &b/rps [rock/paper/scissors/random/points/reload]'
 
 # These messages are sent when a user runs /rps reload.
 reload-started: '%prefix% Reloading cached messages and settings values...'
