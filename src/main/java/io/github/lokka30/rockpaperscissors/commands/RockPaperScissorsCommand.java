@@ -79,7 +79,7 @@ public class RockPaperScissorsCommand implements CommandExecutor {
     }
 
     private RPSAction generateRandomRPSAction() {
-        final int index = ThreadLocalRandom.current().nextInt(1, 3);
+        final int index = ThreadLocalRandom.current().nextInt(1, 3 + 1);
         switch (index) {
             case 1:
                 return RPSAction.ROCK;
