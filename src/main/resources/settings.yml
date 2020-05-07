@@ -15,6 +15,10 @@ sounds:
     id: 'ENTITY_EXPERIENCE_ORB_PICKUP'
     volume: 0.75
     pitch: 0.0
+  game-start:
+    id: 'BLOCK_NOTE_BLOCK_PLING'
+    volume: 0.75
+    pitch: 2.0
   game-win:
     id: 'ENTITY_PLAYER_LEVELUP'
     volume: 0.75

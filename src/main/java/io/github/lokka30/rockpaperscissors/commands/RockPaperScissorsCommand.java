@@ -161,12 +161,15 @@ public class RockPaperScissorsCommand implements CommandExecutor {
                         switch (botAction) {
                             case ROCK:
                                 rpsFinished(player, RPSOutcome.LOSS);
+                                instance.fileCache.SETTINGS_SOUND_GAME_START.playToPlayer(player);
                                 break;
                             case PAPER:
                                 rpsFinished(player, RPSOutcome.WIN);
+                                instance.fileCache.SETTINGS_SOUND_GAME_START.playToPlayer(player);
                                 break;
                             case SCISSORS:
                                 rpsFinished(player, RPSOutcome.DRAW);
+                                instance.fileCache.SETTINGS_SOUND_GAME_START.playToPlayer(player);
                                 break;
                             default:
                                 return;
@@ -187,12 +190,15 @@ public class RockPaperScissorsCommand implements CommandExecutor {
         switch (outcome) {
             case WIN:
                 instance.fileCache.SETTINGS_TITLE_END_WIN.send(player);
+                instance.fileCache.SETTINGS_SOUND_GAME_WIN.playToPlayer(player);
                 break;
             case DRAW:
                 instance.fileCache.SETTINGS_TITLE_END_DRAW.send(player);
+                instance.fileCache.SETTINGS_SOUND_GAME_DRAW.playToPlayer(player);
                 break;
             case LOSS:
                 instance.fileCache.SETTINGS_TITLE_END_LOSS.send(player);
+                instance.fileCache.SETTINGS_SOUND_GAME_LOSS.playToPlayer(player);
                 break;
             default:
                 throw new IllegalStateException("Undefined RPSOutcome state: " + outcome.toString());

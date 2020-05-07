@@ -34,6 +34,7 @@ public class FileCache {
     public int SETTINGS_OUTCOME_DELAY;
     public String MESSAGES_POINTS;
     public HashMap<Player, Integer> pointsMap;
+    public CachedSound SETTINGS_SOUND_GAME_START;
     private RockPaperScissors instance;
 
     public FileCache(RockPaperScissors instance) {
@@ -64,6 +65,7 @@ public class FileCache {
         SETTINGS_TITLE_END_LOSS = loadCachedTitle("end.loss");
         SETTINGS_OUTCOME_DELAY = instance.settings.get("outcome-delay", 1);
         MESSAGES_POINTS = instance.messages.get("points", "your score is %points% points");
+        SETTINGS_SOUND_GAME_START = loadCachedSound("game-start");
 
         if (pointsMap == null) {
             pointsMap = new HashMap<>();
@@ -84,8 +86,8 @@ public class FileCache {
 
     public CachedTitle loadCachedTitle(String id) {
         final String path = "titles." + id + ".";
-        String mainTitle = instance.settings.get(path + "mainTitle", null);
-        String subTitle = instance.settings.get(path + "subTitle", null);
+        String mainTitle = instance.utils.colorize(instance.settings.get(path + "mainTitle", null));
+        String subTitle = instance.utils.colorize(instance.settings.get(path + "subTitle", null));
         int fadeIn = instance.settings.get(path + "fadeIn", 5);
         int stay = instance.settings.get(path + "stay", 20);
         int fadeOut = instance.settings.get(path + "fadeOut", 5);
