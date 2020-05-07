@@ -27,7 +27,7 @@ public class RockPaperScissorsCommand implements CommandExecutor {
             if (player.hasPermission("rockpaperscissors.use")) {
                 if (args.length == 0) {
                     for (String msg : instance.fileCache.MESSAGES_INFO) {
-                        player.sendMessage(instance.utils.prefix(msg));
+                        player.sendMessage(instance.utils.prefix(msg.replaceAll("%version%", instance.getDescription().getVersion())));
                     }
                     instance.fileCache.SETTINGS_SOUND_CMD_SUCCESS.playToPlayer(player);
                 } else if (args.length == 1) {

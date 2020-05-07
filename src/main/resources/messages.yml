@@ -12,7 +12,7 @@ no-permission: '%prefix% You don''t have access to that.'
 
 # These messages are sent when a user runs /rps info.
 info:
-  - '%prefix% Running &bVersion %version%&7 by &blokka30&7.'
+  - '%prefix% Running &bRPS v%version%&7, developed by lokka30.'
   - '%prefix% Available commands:'
   - '&8 &m->&b /rps &8- &7View plugin information'
   - '&8 &m->&b /rps [rock/paper/scissors/random] &8- &7Play RPS with specified action'
