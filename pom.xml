@@ -6,7 +6,7 @@
 
     <groupId>io.github.lokka30</groupId>
     <artifactId>RockPaperScissors</artifactId>
-    <version>1.0-ALPHA</version>
+    <version>1.0.0-ALPHA</version>
 
     <name>RockPaperScissors</name>
     <description>A severely overbuilt plugin that runs the classic rock, paper, scissors game against a bot</description>
