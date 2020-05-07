@@ -44,7 +44,7 @@ public class Utils {
 
     public void log(LogLevel logLevel, String msg) {
         Logger logger = Bukkit.getLogger();
-        msg = "&7" + msg;
+        msg = colorize("&7" + msg);
         switch (logLevel) {
             case INFO:
                 logger.info(msg);
