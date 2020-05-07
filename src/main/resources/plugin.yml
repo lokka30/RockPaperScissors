@@ -1,0 +1,28 @@
+name: RockPaperScissors
+version: ${project.version}
+api-version: '1.13'
+description: ${project.description}
+author: lokka30
+load: POSTWORLD
+prefix: 'RockPaperScissors'
+main: io.github.lokka30.rockpaperscissors.RockPaperScissors
+
+commands:
+  rockpaperscissors:
+    aliases: [rps, rockpaperscissor]
+    description: 'Main command.'
+    usage: /<command> [rock, paper, scissors, points, info, reload]
+
+permissinos:
+  rockpaperscissors.*:
+    default: op
+    description: 'All RockPaperScissors permissions.'
+    children:
+      rockpaperscissors.use: true
+      rockpaperscissors.reload: true
+  rockpaperscissors.use:
+    default: true
+    description: 'Ability to use /rps.'
+  rockpaperscissors.reload:
+    default: op
+    description: 'Ability to use /rps reload.'

@@ -1,0 +1,31 @@
+# Thank you for using RockPaperScissors by lokka30.
+# Discord server (best place to ask for help): https://discord.gg/69NWW6A
+
+# This message replaces all of the %prefix% placeholders contained in most of the messages in this file.
+prefix: '&b&lRockPaperScissors:&7'
+
+# This message is sent when a user runs /rps points.
+points: '%prefix% Your RPS score is &b%points% Points&7.'
+
+# This message is sent when a user doesn't have permission to run /rps or /rps reload.
+no-permission: '%prefix% You don''t have access to that.'
+
+# These messages are sent when a user runs /rps info.
+info:
+  - '%prefix% Running &bVersion %version%&7 by &blokka30&7.'
+  - '%prefix% Available commands:'
+  - '&8 &m->&b /rps &8- &7Play RPS with a random action'
+  - '&8 &m->&b /rps [rock/paper/scissors] &8- &7Play RPS with specified action'
+  - '&8 &m->&b /rps points &8- &7Shows your RPS score'
+  - '&8 &m->&b /rps info &8- &7Show plugin info and commands list'
+  - '&8 &m->&b /rps reload &8- &7Reload the file cache'
+
+# These messages are sent when a user runs /rps reload.
+reload-started: '%prefix% Reloading cached messages and settings values...'
+reload-complete: '%prefix% ...Reload complete.'
+
+# This message is sent if the console or other non-player command executor attempts to run the RockPaperScissors command.
+must-be-player: '%prefix% You must be a player to execute this command.'
+
+# Don't touch this unless you know what you're doing.
+file-version: 1

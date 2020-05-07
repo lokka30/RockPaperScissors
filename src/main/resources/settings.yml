@@ -1,0 +1,76 @@
+# Thank you for using RockPaperScissors by lokka30.
+# Discord server (best place to ask for help): https://discord.gg/69NWW6A
+
+# The delay (in seconds) until the game outcome is sent.
+# Recommended to keep at 1 second or more.
+outcome-delay: 1
+
+# Configure your own sounds for the plugin if you want
+sounds:
+  cmd-success:
+    id: 'ENTITY_EXPERIENCE_ORB_PICKUP'
+    volume: 0.75
+    pitch: 2.0
+  cmd-failure:
+    id: 'ENTITY_EXPERIENCE_ORB_PICKUP'
+    volume: 0.75
+    pitch: 0.0
+  game-win:
+    id: 'ENTITY_PLAYER_LEVELUP'
+    volume: 0.75
+    pitch: 2.0
+  game-draw:
+    id: 'ENTITY_PLAYER_LEVELUP'
+    volume: 0.75
+    pitch: 1.0
+  game-loss:
+    id: 'ENTITY_PLAYER_LEVELUP'
+    volume: 0.75
+    pitch: 0.0
+
+# Configure your own titles for the plugin if you want
+titles:
+  start:
+    rock:
+      mainTitle: '&b&lRock Paper Scissors'
+      subTitle: '&7You chose &bRock&7.'
+      fadeIn: 5
+      stay: 20
+      fadeOut: 5
+    paper:
+      mainTitle: '&b&lRock Paper Scissors'
+      subTitle: '&7You chose &bPaper&7.'
+      fadeIn: 5
+      stay: 20
+      fadeOut: 5
+    scissors:
+      mainTitle: '&b&lRock Paper Scissors'
+      subTitle: '&7You chose &bScissors&7.'
+      fadeIn: 5
+      stay: 20
+      fadeOut: 5
+  end:
+    win:
+      mainTitle: '&b&lRock Paper Scissors'
+      subTitle: '&7Game ended: &aWINNER!'
+      fadeIn: 5
+      stay: 20
+      fadeOut: 5
+    draw:
+      mainTitle: '&b&lRock Paper Scissors'
+      subTitle: '&7Game ended: &eDRAW!'
+      fadeIn: 5
+      stay: 20
+      fadeOut: 5
+    loss:
+      mainTitle: '&b&lRock Paper Scissors'
+      subTitle: '&7Game ended: &cLOSS!'
+      fadeIn: 5
+      stay: 20
+      fadeOut: 5
+
+# Should the plugin check for updates? This is a quick, asynchronous process that only happens on server startup.
+check-for-updates: true
+
+# Don't touch this unless you know what you're doing.
+file-version: 1
