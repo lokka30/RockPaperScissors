@@ -1,2 +1,6 @@
 v1.0.0-ALPHA
 - Initial Release
+
+v1.0.1-SNAPSHOT
+- (Code) Updated libraries
+- (Code) Fixed libraries relocation path
