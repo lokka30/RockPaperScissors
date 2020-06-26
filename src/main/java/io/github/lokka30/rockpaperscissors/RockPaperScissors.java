@@ -55,10 +55,8 @@ public class RockPaperScissors extends JavaPlugin {
             }
         }
 
-        if (isSupported) {
-            utils.log(LogLevel.INFO, "Detected server version as '&b" + currentServerVersion + "&7' (supported).");
-        } else {
-            utils.log(LogLevel.INFO, "Detected server version as '&b" + currentServerVersion + "&7'. Your current version of the RockPaperScissors does not support your server's version, you will not receive support for any issues you encounter.");
+        if (!isSupported) {
+            utils.log(LogLevel.INFO, "This version of the plugin does not support your server version '&b" + currentServerVersion + "&7'. You will not receive support from the author from running this unsupported configuration.");
         }
 
         //Any other compatibility checks go below.
@@ -127,7 +125,6 @@ public class RockPaperScissors extends JavaPlugin {
         utils.log(LogLevel.INFO, "&8(&34&8/&34&8) &7Registering metrics...");
         new Metrics(this, 7437);
     }
-    //TODO metrics url is https://bstats.org/plugin/bukkit/RockPaperScissors/7437
 
     private void checkForUpdates() {
         if (fileCache.SETTINGS_CHECK_FOR_UPDATES) {
