@@ -6,7 +6,7 @@ v1.0.1-SNAPSHOT
 - (Code) Fixed libraries relocation path
 
 v1.0.2-SNAPSHOT
-- Plugin now officially supports 1.16.1 (along with 1.7.x and above too)
+- Plugin now officially supports 1.16.1 (along with 1.11.x and above too)
 - Plugin is now compiled in 1.16.1.
 - Modified Utils#getSupportedServerVersions to contain less values and include 1.16 as a supported server version.
 - Modified the startup compatibility check - removed a useless message and changed the unsupported message.
